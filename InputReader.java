@@ -6,8 +6,8 @@ import java.util.Scanner;
  * The text typed by a user is then chopped into words, and a set of words 
  * is provided.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author Greg Babbert
+ * @version 2020.11.28
  */
 public class InputReader
 {
