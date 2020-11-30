@@ -71,21 +71,23 @@ public class Responder
     {
         try {
             List<String> values = new ArrayList<>();
+            List<String> spltValues = new ArrayList<>();
             List<String> keyValues = new ArrayList<>();
             List<String> hashValues = new ArrayList<>();
             Scanner scanner = new Scanner(Paths.get(FILE_OF_HASHMAP_RESPONSES)).useDelimiter("\n");
             while(scanner.hasNext()) {
                 values.add(scanner.next());
             }
-            int i = 1;
             for (String value : values) {
                 String[] splited = value.split(",", 2);
-                System.out.println("" + i + "");
-                i++;
                 for (String splt : splited) {
-                    System.out.println(splt + "\n");
+                    spltValues.add(splt);
                 }
             }
+            for (int i = 1; i < spltValues.size(); i+=4) {
+                
+            }
+            System.out.println(spltValues.size());
         }
         catch(IOException e) {
             System.err.println("A problem was encountered reading " +
