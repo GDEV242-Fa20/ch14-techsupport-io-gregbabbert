@@ -66,14 +66,17 @@ public class Responder
     /**
      * Enter all the known keywords and their associated responses
      * into our response map.
+     * 
+     * Update:
+     * The keywords and their known repsonses are now inputted
+     * through an external csv file.
+     * 
      */
     private void fillResponseMap()
     {
         try {
             List<String> values = new ArrayList<>();
             List<String> spltValues = new ArrayList<>();
-            List<String> keyValues = new ArrayList<>();
-            List<String> hashValues = new ArrayList<>();
             Scanner scanner = new Scanner(Paths.get(FILE_OF_HASHMAP_RESPONSES)).useDelimiter("\n");
             while(scanner.hasNext()) {
                 values.add(scanner.next());
@@ -84,8 +87,8 @@ public class Responder
                     spltValues.add(splt);
                 }
             }
-            for (int i = 1; i < spltValues.size(); i+=4) {
-                
+            for (int i = 0; i < spltValues.size(); i+=4) {
+                responseMap.put(spltValues.get(i), spltValues.get(i + 1));
             }
             System.out.println(spltValues.size());
         }
