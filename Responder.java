@@ -90,7 +90,6 @@ public class Responder
             for (int i = 0; i < spltValues.size(); i+=4) {
                 responseMap.put(spltValues.get(i), spltValues.get(i + 1));
             }
-            System.out.println(spltValues.size());
         }
         catch(IOException e) {
             System.err.println("A problem was encountered reading " +
