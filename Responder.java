@@ -71,18 +71,21 @@ public class Responder
     {
         try {
             List<String> values = new ArrayList<>();
-            Scanner scanner = new Scanner(Paths.get(FILE_OF_HASHMAP_RESPONSES)).useDelimiter(",");
+            List<String> keyValues = new ArrayList<>();
+            List<String> hashValues = new ArrayList<>();
+            Scanner scanner = new Scanner(Paths.get(FILE_OF_HASHMAP_RESPONSES)).useDelimiter("\n");
             while(scanner.hasNext()) {
                 values.add(scanner.next());
             }
+            int i = 1;
             for (String value : values) {
-                if (value.contains(",")) {
-                    int comma = value.indexOf(",");
-                    value.replace(",","");
-                    
+                String[] splited = value.split(",", 2);
+                System.out.println("" + i + "");
+                i++;
+                for (String splt : splited) {
+                    System.out.println(splt + "\n");
                 }
             }
-            System.out.println(values);
         }
         catch(IOException e) {
             System.err.println("A problem was encountered reading " +
